@@ -41,7 +41,7 @@
     $this->Gui->add_item(
         array(
             'type' => 'dom',
-            'content' => $this->load->module_view('article','add_form',array(),true) 
-        ),'article',1);
+            'content' => $this->load->module_view('article','add_form',null,true) 
+        ), 'article' ,1 );
     
     $this->Gui->output();

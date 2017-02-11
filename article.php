@@ -56,9 +56,10 @@ class ArticleModule extends Tendoo_Module{
     
     public function install(){
         // Checking if the article tables is in the DB 
-        if(@$Options['article_db_install']){
+        if( @$Options[ 'article_db_install' ] ){
             // Installing the article table
-            $q = "create table article_article 
+            // Les variables doivent être assez explicites
+            $query = "create table article_article 
                 (
                    id                   int                            not null auto_increment,
                    name                 varchar(255)                   null,
@@ -67,15 +68,15 @@ class ArticleModule extends Tendoo_Module{
                    constraint pk_article_article primary key clustered (id)
                 )";
             
-            if($this->db->query($q)){
+            if( $this->db->query( $query ) ){
                 // Set the options article_db_install to yes
-                $this->db->insert('options', array(
-                    'key'    =>    'article_db_install',
-                    'value'    =>    'yes',
-                    'autoload'    =>    1,
-                    'user'        =>    0,
-                    'app'        =>    'article_module',
-                ));
+                $this->db->insert( 'options', array(
+                    'key'           =>    'article_db_install',
+                    'value'         =>    'yes',
+                    'autoload'      =>    1,
+                    'user'          =>    0,
+                    'app'           =>    'article_module',
+                ) );
             }
         }
     }
