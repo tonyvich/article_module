@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<namespace>article</namespace>
+	<version>1.1</version>
+	<author>Tiny skillz</author>
+	<description>A modules for Create Read Update and Delete Article</description>
+	<main>article.php</main>
+	<name>Article Plugin</name>
+</application>
